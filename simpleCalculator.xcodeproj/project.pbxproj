@@ -13,6 +13,13 @@
 		3239095B287E3BE10040534C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32390959287E3BE10040534C /* Main.storyboard */; };
 		3239095D287E3BE30040534C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3239095C287E3BE30040534C /* Assets.xcassets */; };
 		32390960287E3BE30040534C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3239095E287E3BE30040534C /* LaunchScreen.storyboard */; };
+		32FF8AC928C22D1500F02D77 /* OperatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FF8AC828C22D1500F02D77 /* OperatorFactory.swift */; };
+		32FF8ACB28C22D4100F02D77 /* Calculatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FF8ACA28C22D4100F02D77 /* Calculatable.swift */; };
+		32FF8ACD28C2B83500F02D77 /* SumOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FF8ACC28C2B83500F02D77 /* SumOperator.swift */; };
+		32FF8ACF28C2EDC200F02D77 /* SubstractOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FF8ACE28C2EDC200F02D77 /* SubstractOperator.swift */; };
+		32FF8AD128C2EDFF00F02D77 /* MultiplyOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FF8AD028C2EDFF00F02D77 /* MultiplyOperator.swift */; };
+		32FF8AD328C2EE0800F02D77 /* DivideOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FF8AD228C2EE0800F02D77 /* DivideOperator.swift */; };
+		32FF8AD528C2EFF500F02D77 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FF8AD428C2EFF500F02D77 /* Enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		3239095C287E3BE30040534C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3239095F287E3BE30040534C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32390961287E3BE30040534C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32FF8AC828C22D1500F02D77 /* OperatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorFactory.swift; sourceTree = "<group>"; };
+		32FF8ACA28C22D4100F02D77 /* Calculatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculatable.swift; sourceTree = "<group>"; };
+		32FF8ACC28C2B83500F02D77 /* SumOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumOperator.swift; sourceTree = "<group>"; };
+		32FF8ACE28C2EDC200F02D77 /* SubstractOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubstractOperator.swift; sourceTree = "<group>"; };
+		32FF8AD028C2EDFF00F02D77 /* MultiplyOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MultiplyOperator.swift; path = ../../../../../../../Documents/MultiplyOperator.swift; sourceTree = "<group>"; };
+		32FF8AD228C2EE0800F02D77 /* DivideOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivideOperator.swift; sourceTree = "<group>"; };
+		32FF8AD428C2EFF500F02D77 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +70,8 @@
 		32390952287E3BE10040534C /* simpleCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				32FF8AD628C2EFFA00F02D77 /* Utilities */,
+				32FF8AC728C22CEF00F02D77 /* Operators */,
 				32390953287E3BE10040534C /* AppDelegate.swift */,
 				32390955287E3BE10040534C /* SceneDelegate.swift */,
 				32390957287E3BE10040534C /* ViewController.swift */,
@@ -65,6 +81,27 @@
 				32390961287E3BE30040534C /* Info.plist */,
 			);
 			path = simpleCalculator;
+			sourceTree = "<group>";
+		};
+		32FF8AC728C22CEF00F02D77 /* Operators */ = {
+			isa = PBXGroup;
+			children = (
+				32FF8AC828C22D1500F02D77 /* OperatorFactory.swift */,
+				32FF8ACA28C22D4100F02D77 /* Calculatable.swift */,
+				32FF8ACC28C2B83500F02D77 /* SumOperator.swift */,
+				32FF8ACE28C2EDC200F02D77 /* SubstractOperator.swift */,
+				32FF8AD228C2EE0800F02D77 /* DivideOperator.swift */,
+				32FF8AD028C2EDFF00F02D77 /* MultiplyOperator.swift */,
+			);
+			path = Operators;
+			sourceTree = "<group>";
+		};
+		32FF8AD628C2EFFA00F02D77 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				32FF8AD428C2EFF500F02D77 /* Enums.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +177,14 @@
 			files = (
 				32390958287E3BE10040534C /* ViewController.swift in Sources */,
 				32390954287E3BE10040534C /* AppDelegate.swift in Sources */,
+				32FF8AD528C2EFF500F02D77 /* Enums.swift in Sources */,
+				32FF8ACB28C22D4100F02D77 /* Calculatable.swift in Sources */,
+				32FF8AD328C2EE0800F02D77 /* DivideOperator.swift in Sources */,
 				32390956287E3BE10040534C /* SceneDelegate.swift in Sources */,
+				32FF8AC928C22D1500F02D77 /* OperatorFactory.swift in Sources */,
+				32FF8AD128C2EDFF00F02D77 /* MultiplyOperator.swift in Sources */,
+				32FF8ACD28C2B83500F02D77 /* SumOperator.swift in Sources */,
+				32FF8ACF28C2EDC200F02D77 /* SubstractOperator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

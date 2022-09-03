@@ -15,17 +15,8 @@ class ViewController: UIViewController {
     var shouldClear: Bool = false
     
     @IBOutlet weak var valueDisplay: UILabel!
-    
-    enum operationType : String {
-        case sum = "+"
-        case substract = "-"
-        case divide = "/"
-        case multiply = "*"
-        case none = ""
-    }
-    
-    
-    var queuedOperation: operationType = operationType.none
+        
+    var queuedOperation: OperatorTypes? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,73 +56,55 @@ class ViewController: UIViewController {
         valueDisplay.text = displayingStringValue
         operationValue = 0
         lastOperationValue = 0
-        queuedOperation = operationType.none
+        queuedOperation = nil
         result = 0
         shouldClear = false
     }
     
-    @IBAction func handleOperatorButtonPressed(_ sender: UIButton) {
+    //This is repeating. Could potentially be encapsulated
+    @IBAction func handleMultiplyPress(_ sender: UIButton) {
+        if queuedOperation != nil { handleProcess() }
+
+        queuedOperation = OperatorTypes.Multiplication
+    }
+    @IBAction func handleSumPress(_ sender: UIButton) {
+        if queuedOperation != nil { handleProcess() }
         
-        //blink
-        if queuedOperation != operationType.none {
-            handleProcess()
-        }
-        if let pressedButton = sender.titleLabel?.text {
-            switch pressedButton {
-            case "+":
-                queuedOperation = operationType.sum
-            case "-":
-                queuedOperation = operationType.substract
-            case "x":
-                queuedOperation = operationType.multiply
-            case "/":
-                queuedOperation = operationType.divide
-            default:
-                return
-            }
-        }
+        queuedOperation = OperatorTypes.Addition
+    }
+    @IBAction func handleDividePress(_ sender: UIButton) {
+        if queuedOperation != nil { handleProcess() }
+
+        queuedOperation = OperatorTypes.Multiplication
+    }
+    @IBAction func handleSubstractPress(_ sender: UIButton) {
+        if queuedOperation != nil { handleProcess() }
+        
+        queuedOperation = OperatorTypes.Multiplication
+    }
+    
+    @IBAction func operatorButtonPressed(_ sender: UIButton) {
         lastOperationValue = Double(valueDisplay.text ?? "") ?? 0
         shouldClear = true
     }
     
     @IBAction func handleProcess() {
         var result: Double = 0
-        switch queuedOperation {
-        case operationType.sum:
-            result = sumValues(lastOperationValue, operationValue)
-        case operationType.substract:
-            result = substractValues(lastOperationValue, operationValue)
-        case operationType.multiply:
-            result = multiplyValues(lastOperationValue, operationValue)
-        case operationType.divide:
-            result = divideValues(lastOperationValue, operationValue)
-        default:
-            result = 0
+        var _operator: Calculatable
+        
+        if let qOperation = queuedOperation {
+            let operatorFactory = OperatorFactory()
+            _operator = operatorFactory.getOperator(qOperation)
+            result = _operator.calculate(lastOperationValue, operationValue)
         }
+       
         shouldClear = true
         displayingStringValue = result.description
         valueDisplay.text = removeTrailingZeroes(result)
         lastOperationValue = result
         
     }
-    
-    //    OPERATION FUNCTIONS
-    func sumValues(_ a: Double, _ b: Double) -> Double {
-        return a + b
-    }
-    
-    func substractValues(_ a: Double, _ b: Double) -> Double {
-        return a - b
-    }
-    
-    func multiplyValues(_ a: Double, _ b: Double) -> Double {
-        return (a * b).rounded()
-    }
-    
-    func divideValues(_ a: Double, _ b: Double) -> Double {
-        return a / b
-    }
-    
+        
     func removeTrailingZeroes(_ value: Double) -> String {
         let textValue: String = String(value)
         let splitValues = textValue.split(separator: ".")
@@ -143,8 +116,5 @@ class ViewController: UIViewController {
         }
     }
     
-    func renderValue(_ value: Double) {
-        
-    }
 }
 

@@ -87,7 +87,8 @@
                                     <color key="baseBackgroundColor" systemColor="systemPurpleColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="handleOperatorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9zN-az-aaZ"/>
+                                    <action selector="handleDividePress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HwC-qz-1XM"/>
+                                    <action selector="operatorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Yg-5l-IRd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RsO-03-LoC">
@@ -131,7 +132,8 @@
                                     <color key="baseBackgroundColor" systemColor="systemPurpleColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="handleOperatorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xOg-Vj-Qc9"/>
+                                    <action selector="handleMultiplyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fPu-mz-p8S"/>
+                                    <action selector="operatorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kkN-PN-0QD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sye-9f-7sr">
@@ -197,7 +199,8 @@
                                     <color key="baseBackgroundColor" systemColor="systemPurpleColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="handleOperatorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dOA-f3-JvZ"/>
+                                    <action selector="handleSubstractPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wDj-ry-Bmu"/>
+                                    <action selector="operatorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZEo-Vw-I8o"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHp-bm-dga">
@@ -208,7 +211,8 @@
                                     <color key="baseBackgroundColor" systemColor="systemPurpleColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="handleOperatorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pgc-nz-vHt"/>
+                                    <action selector="handleSumPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QVO-PY-Xew"/>
+                                    <action selector="operatorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dLc-3s-tg4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZc-f3-7kR">
